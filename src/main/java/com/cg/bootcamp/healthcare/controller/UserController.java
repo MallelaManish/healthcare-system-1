@@ -24,6 +24,13 @@ public class UserController {
 
 	@Autowired
 	private UserServiceImpl userService;
+	//To login user
+	@GetMapping("/login")
+	public Optional<User> UserLogin(@PathVariable int userId,@PathVariable String password) {
+		
+		return userService.loginVerification(userId, password);
+		
+	}
 	
 	//To save new user
 	@PostMapping("/register")

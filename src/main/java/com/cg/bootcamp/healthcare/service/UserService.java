@@ -17,4 +17,6 @@ public interface UserService {
 	
 	public Optional<User> FindUser(int userId);
 	
+	public  Optional<User> loginVerification(int userId,String password);
+	
 }

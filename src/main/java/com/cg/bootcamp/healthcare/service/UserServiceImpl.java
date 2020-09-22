@@ -56,6 +56,25 @@ public class UserServiceImpl implements UserService {
 		
 		return userDao.findById(userId);
 	}
+
+	@Override
+	public Optional<User> loginVerification(int userId, String password) {
+		
+		String passwordVerification;
+		
+		passwordVerification=userDao.findById(userId).get().getUserPassword();
+		if(passwordVerification==password) {
+			return userDao.findById(userId);
+		}
+		
+		else return null;
+		
+		
+		
+		
+		
+		
+	}
 	
 	
 	
